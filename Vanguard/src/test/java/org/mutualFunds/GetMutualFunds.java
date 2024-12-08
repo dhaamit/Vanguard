@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.sql.Driver;
@@ -13,7 +14,9 @@ import java.sql.Driver;
 public class GetMutualFunds extends BaseTest {
     final String mutualFundUrl = "/investment-products/list/mutual-funds";
     WebDriver driver;
-
+    @BeforeTest()
+    public void setBrowser (){
+    }
     @Test(groups = {"regression", "functional"})
     public void getMutualFunds() {
         String title;
