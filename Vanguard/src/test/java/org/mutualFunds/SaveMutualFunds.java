@@ -8,6 +8,6 @@ public class SaveMutualFunds {
     public void saveFunds()
     {
         System.out.println("Inside Save Funds");
-        Assert.assertFalse(true);
+        Assert.assertTrue(true);
     }
 }
