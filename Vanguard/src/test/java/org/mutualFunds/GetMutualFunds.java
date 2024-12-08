@@ -3,24 +3,22 @@ package org.mutualFunds;
 
 import org.base.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.util.TestDataConstants;
+import java.io.IOException;
 
-import java.sql.Driver;
-
-public class GetMutualFunds extends BaseTest {
-    final String mutualFundUrl = "/investment-products/list/mutual-funds";
+public class GetMutualFunds extends BaseTest  {
     WebDriver driver;
-    @BeforeTest()
-    public void setBrowser (){
+
+    public GetMutualFunds(String url) throws IOException {
+        super(TestDataConstants.MUTUALFUNDSURL);
     }
+
     @Test(groups = {"regression", "functional"})
     public void getMutualFunds() {
         String title;
-        //        driver.get("https://investor.vanguard.com" + mutualFundUrl);
         driver = super.getDriver();
         title = driver.findElement(By.xpath("//div[@class='discover-title']")).getText();
         System.out.println("inside Get Mutual Funds : " + title);

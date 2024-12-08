@@ -3,28 +3,32 @@ package org.base;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.util.EnvironmentUtil;
+
+import java.io.IOException;
 
 public class BaseTest {
-    String Url = "https://investor.vanguard.com/investment-products/list/mutual-funds";
+    EnvironmentUtil envUtil = new EnvironmentUtil();
     WebDriver driver;
 
-    public BaseTest() {
-        setDriver();
-        getUrl(this.driver);
+    public BaseTest(String url) throws IOException {
+        envUtil.setURL(url);
+        this.setDriver();
+        this.getUrl(driver, envUtil.getURL());
     }
 
     public void setDriver() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        options();
+        this.options();
     }
 
     public WebDriver getDriver() {
         return this.driver;
     }
 
-    public void getUrl(WebDriver driver) {
-        driver.get(this.Url);
+    public void getUrl(WebDriver driver, String url) {
+        driver.get(url);
     }
 
     void options() {
