@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class MutualFundsPage {
     WebDriver driver;
-
+    CorporatePortalPage corpPortalPage;
     public MutualFundsPage(WebDriver driver)
     {
         this.driver = driver;

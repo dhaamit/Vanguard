@@ -1,0 +1,12 @@
+Personal investor=https://investor.vanguard.com/
+Retirement plan participants=https://pelander.vanguard.com/public-route
+Institutional investors=https://institutional.vanguard.com/home
+Financial advisors=https://advisors.vanguard.com/advisors-home
+Company information and insights=https://corporate.vanguard.com/
+Global sites=https://global.vanguard.com/portal/site/home
+Small Business Online=https://smallbiz.vanguard.com/VGApp/sbs/nesc/LoginPage
+My Plan Manager ™=https://myplanmanager.vanguard.com/us/public/#/logon?TYPE=33554433&REALMOID=06-0002dae8-7003-1967-9edc-8b160a96a05e&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=myplanmanagerprd02&TARGET=$SM$%2Fus%2F
+Institutional Trading=https://investmentonly.vanguard.com/VGApp/iio/nesc/LoginPage?TYPE=33554433&REALMOID=06-000b618b-114c-1b03-971f-8b160a96f0f1&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=investmentonlyprd02&TARGET=$SM$%2fVGApp%2fiio%2fPortfolios
+Pressroom=https://pressroom.vanguard.com/#/
+Career opportunities=https://www.vanguardjobs.com/
+Vanguard Charitable=https://www.vanguardcharitable.org/

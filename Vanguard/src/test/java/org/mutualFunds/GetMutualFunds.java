@@ -14,7 +14,7 @@ import java.io.IOException;
 public class GetMutualFunds extends BaseTest  {
     WebDriver driver;
     MutualFundsPage mutualFundsPage;
-    public GetMutualFunds(String url) throws IOException {
+    public GetMutualFunds() throws IOException {
         super(TestDataConstants.MUTUALFUNDSURL);
         driver = super.getDriver();
     }
