@@ -3,32 +3,36 @@ package org.mutualFunds;
 
 import org.base.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.By;
+import org.pageObjects.MutualFundsPage;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.utilities.TestDataConstants;
+import java.io.IOException;
 
-import java.sql.Driver;
-
-public class GetMutualFunds extends BaseTest {
-    final String mutualFundUrl = "/investment-products/list/mutual-funds";
+public class GetMutualFunds extends BaseTest  {
     WebDriver driver;
-    @BeforeTest()
-    public void setBrowser (){
-    }
-    @Test(groups = {"regression", "functional"})
-    public void getMutualFunds() {
-        String title;
-        //        driver.get("https://investor.vanguard.com" + mutualFundUrl);
+    MutualFundsPage mutualFundsPage;
+    public GetMutualFunds() throws IOException {
+        super(TestDataConstants.MUTUALFUNDSURL);
         driver = super.getDriver();
-        title = driver.findElement(By.xpath("//div[@class='discover-title']")).getText();
-        System.out.println("inside Get Mutual Funds : " + title);
+    }
+
+    @BeforeTest
+    public void initialize()
+    {
+       mutualFundsPage = new MutualFundsPage(driver);
     }
 
     @Test(groups = {"regression", "functional"})
-    public void secondFunction() {
-        System.out.println("second Test");
+    public void verifyTitle() {
+        Assert.assertEquals(mutualFundsPage.getTitle(), "Vanguard mutual funds");
+    }
+
+    @Test(groups = {"regression", "functional"})
+    public void verifyName() {
+        System.out.println(mutualFundsPage.getIndexOfSymbol("VAIGX"));
     }
 
     @AfterTest()
