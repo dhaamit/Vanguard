@@ -1,3 +1,4 @@
+//Author - @Amit Dharmale
 package org.pageObjects;
 
 import org.openqa.selenium.By;
@@ -5,15 +6,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
+import java.time.Duration;
 
 public class CorporatePortalPage {
     WebDriver driver;
+    Wait<WebDriver> wait;
     public CorporatePortalPage(WebDriver driver)
     {
         this.driver = driver;
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(this.driver, this);
+        this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(2));
     }
 
     @FindBy(id="ourSites")
@@ -23,10 +29,12 @@ public class CorporatePortalPage {
     public WebElement ourSitesDropdown;
 
     public void clickOurSites(){
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.ourSitesLink));
         this.ourSitesLink.click();
     }
-    public void clickLinkOnOurSites(String strLinkText) {
+    public void clickLinkOnOurSites(String strLinkText) throws InterruptedException {
         this.clickOurSites();
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.ourSitesDropdown.findElement(By.linkText(strLinkText))));
         this.ourSitesDropdown.findElement(By.linkText(strLinkText)).click();
     }
 }
