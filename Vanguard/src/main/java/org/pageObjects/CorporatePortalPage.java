@@ -33,8 +33,11 @@ public class CorporatePortalPage {
         this.ourSitesLink.click();
     }
     public void clickLinkOnOurSites(String strLinkText) throws InterruptedException {
+        if (!driver.getCurrentUrl().contains("corporate-portal")) {
+            driver.navigate().back();
+        }
         this.clickOurSites();
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.ourSitesDropdown.findElement(By.linkText(strLinkText))));
-        this.ourSitesDropdown.findElement(By.linkText(strLinkText)).click();
+        this.wait.until(ExpectedConditions.elementToBeClickable(this.ourSitesDropdown.findElement(By.xpath("//a[contains(text(),'"+strLinkText+"')]"))));
+        this.ourSitesDropdown.findElement(By.xpath("//a[contains(text(),'"+strLinkText+"')]")).click();
     }
 }

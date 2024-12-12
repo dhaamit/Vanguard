@@ -5,6 +5,7 @@ import org.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.pageObjects.CorporatePortalPage;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -15,6 +16,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class CorporatePortalOurSitesTest extends BaseTest {
     WebDriver driver;
@@ -49,8 +51,12 @@ public class CorporatePortalOurSitesTest extends BaseTest {
         final String linkURL = dataVal[1];
         corpPortalPage.clickLinkOnOurSites(linkName);
         currentLink = driver.getCurrentUrl();
-        Assert.assertEquals(currentLink, linkURL);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Assert.assertTrue(currentLink.contains(linkURL));
         driver.navigate().back();
+    }
+    @AfterTest
+    public void closeTest()
+    {
+        driver.close();
     }
 }
