@@ -1,7 +1,7 @@
 Personal investor=https://investor.vanguard.com/
 Retirement plan participants=https://pelander.vanguard.com/public-route
 Institutional investors=https://institutional.vanguard.com/home
-Financial advisors=https://advisors.vanguard.com/advisors-home
+Financial advisors=https://advisors.vanguard.com/
 Company information and insights=https://corporate.vanguard.com/
 Global sites=https://global.vanguard.com/portal/site/home
 Small Business Online=https://smallbiz.vanguard.com/VGApp/sbs/nesc/LoginPage

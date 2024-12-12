@@ -1,3 +1,4 @@
+//Author - @Amit Dharmale
 package org.utilities;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class EnvironmentUtil {
             this.URL = prop.getProperty("env.url")+url;
         }
     }
-    public String getURL(){
+    public String getURL() {
         return this.URL;
     }
 }

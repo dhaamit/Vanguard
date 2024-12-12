@@ -3,8 +3,8 @@
 <suite name="Suite" verbose="1">
     <test name="Regression">
         <classes>
+            <class name="org.corporatePortal.CorporatePortalOurSitesTest"/>
             <class name="org.mutualFunds.GetMutualFunds"/>
-            <class name="org.mutualFunds.SaveMutualFunds"/>
         </classes>
     </test>
 </suite>
