@@ -13,10 +13,8 @@ import org.utilities.DataUtil;
 import org.utilities.TestDataConstants;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class CorporatePortalOurSitesTest extends BaseTest {
     WebDriver driver;
