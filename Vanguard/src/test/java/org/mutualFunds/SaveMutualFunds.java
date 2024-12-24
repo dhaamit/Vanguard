@@ -1,6 +1,7 @@
 package org.mutualFunds;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class SaveMutualFunds {
@@ -9,5 +10,9 @@ public class SaveMutualFunds {
     {
         System.out.println("Inside Save Funds");
         Assert.assertTrue(true);
+    }
+    @AfterTest()
+    public void closeTest() {
+
     }
 }

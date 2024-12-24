@@ -16,6 +16,7 @@ public class BaseTest {
         this.setDriver();
         this.getUrl(driver, envUtil.getURL());
     }
+
     public void setDriver() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
