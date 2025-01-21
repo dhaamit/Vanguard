@@ -1,4 +1,4 @@
-//Author - @Amit Dharmale
+//@author - Amit Dharmale
 package org.pageObjects;
 
 import org.openqa.selenium.By;
